@@ -12,6 +12,7 @@
 		D95C4D8E1ED35997008D4FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95C4D8C1ED35997008D4FC7 /* Main.storyboard */; };
 		D95C4D901ED35997008D4FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95C4D8F1ED35997008D4FC7 /* Assets.xcassets */; };
 		D95C4D931ED35997008D4FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95C4D911ED35997008D4FC7 /* LaunchScreen.storyboard */; };
+		D95C4D9B1ED35C29008D4FC7 /* RoundImage-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C4D9A1ED35C29008D4FC7 /* RoundImage-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D95C4D8F1ED35997008D4FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D95C4D921ED35997008D4FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D95C4D941ED35997008D4FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D95C4D9A1ED35C29008D4FC7 /* RoundImage-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RoundImage-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				D95C4D881ED35997008D4FC7 /* AppDelegate.swift */,
 				D95C4D8A1ED35997008D4FC7 /* ViewController.swift */,
 				D95C4D8C1ED35997008D4FC7 /* Main.storyboard */,
+				D95C4D9A1ED35C29008D4FC7 /* RoundImage-Extension.swift */,
 				D95C4D8F1ED35997008D4FC7 /* Assets.xcassets */,
 				D95C4D911ED35997008D4FC7 /* LaunchScreen.storyboard */,
 				D95C4D941ED35997008D4FC7 /* Info.plist */,
@@ -139,6 +142,7 @@
 			files = (
 				D95C4D8B1ED35997008D4FC7 /* ViewController.swift in Sources */,
 				D95C4D891ED35997008D4FC7 /* AppDelegate.swift in Sources */,
+				D95C4D9B1ED35C29008D4FC7 /* RoundImage-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
