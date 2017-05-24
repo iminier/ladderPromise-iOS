@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D91EC2C11ED60A2500937575 /* PromiseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91EC2C01ED60A2500937575 /* PromiseManager.swift */; };
+		D91EC2C31ED60A8200937575 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91EC2C21ED60A8200937575 /* SwiftyJSON.swift */; };
+		D91EC2C51ED60ABE00937575 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91EC2C41ED60ABE00937575 /* Promise.swift */; };
 		D95C4D891ED35997008D4FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C4D881ED35997008D4FC7 /* AppDelegate.swift */; };
 		D95C4D8B1ED35997008D4FC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C4D8A1ED35997008D4FC7 /* ViewController.swift */; };
 		D95C4D8E1ED35997008D4FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95C4D8C1ED35997008D4FC7 /* Main.storyboard */; };
 		D95C4D901ED35997008D4FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95C4D8F1ED35997008D4FC7 /* Assets.xcassets */; };
 		D95C4D931ED35997008D4FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95C4D911ED35997008D4FC7 /* LaunchScreen.storyboard */; };
 		D95C4D9B1ED35C29008D4FC7 /* RoundImage-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C4D9A1ED35C29008D4FC7 /* RoundImage-Extension.swift */; };
+		D99E1BA11ED61C0B00131A1F /* PromiseManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E1BA01ED61C0B00131A1F /* PromiseManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D91EC2C01ED60A2500937575 /* PromiseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseManager.swift; sourceTree = "<group>"; };
+		D91EC2C21ED60A8200937575 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		D91EC2C41ED60ABE00937575 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		D95C4D851ED35997008D4FC7 /* ladderPromise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ladderPromise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95C4D881ED35997008D4FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D95C4D8A1ED35997008D4FC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +31,7 @@
 		D95C4D921ED35997008D4FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D95C4D941ED35997008D4FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D95C4D9A1ED35C29008D4FC7 /* RoundImage-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RoundImage-Extension.swift"; sourceTree = "<group>"; };
+		D99E1BA01ED61C0B00131A1F /* PromiseManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromiseManagerDelegate.swift; path = ../PromiseManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 			children = (
 				D95C4D871ED35997008D4FC7 /* ladderPromise */,
 				D95C4D861ED35997008D4FC7 /* Products */,
+				D91EC2C21ED60A8200937575 /* SwiftyJSON.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +67,9 @@
 			children = (
 				D95C4D881ED35997008D4FC7 /* AppDelegate.swift */,
 				D95C4D8A1ED35997008D4FC7 /* ViewController.swift */,
+				D91EC2C01ED60A2500937575 /* PromiseManager.swift */,
+				D91EC2C41ED60ABE00937575 /* Promise.swift */,
+				D99E1BA01ED61C0B00131A1F /* PromiseManagerDelegate.swift */,
 				D95C4D8C1ED35997008D4FC7 /* Main.storyboard */,
 				D95C4D9A1ED35C29008D4FC7 /* RoundImage-Extension.swift */,
 				D95C4D8F1ED35997008D4FC7 /* Assets.xcassets */,
@@ -141,8 +153,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95C4D8B1ED35997008D4FC7 /* ViewController.swift in Sources */,
+				D91EC2C11ED60A2500937575 /* PromiseManager.swift in Sources */,
 				D95C4D891ED35997008D4FC7 /* AppDelegate.swift in Sources */,
+				D91EC2C31ED60A8200937575 /* SwiftyJSON.swift in Sources */,
 				D95C4D9B1ED35C29008D4FC7 /* RoundImage-Extension.swift in Sources */,
+				D91EC2C51ED60ABE00937575 /* Promise.swift in Sources */,
+				D99E1BA11ED61C0B00131A1F /* PromiseManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +324,7 @@
 				D95C4D991ED35997008D4FC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
