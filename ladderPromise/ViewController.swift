@@ -8,14 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController, PromiseManagerDelegate, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, PromiseManagerDelegate, UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate {
     
     let promiseController = PromiseManager()
 
+    @IBOutlet weak var mainTextField: UITextField!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
 
+    // Starts postData method and reloads tableview
+    @IBAction func sendPressed(_ sender: UITextField) {
+        promiseController.postData(url: "http://127.0.0.1:8000/promises/", promise: mainTextField.text!)
+        promiseController.promises = []
+        mainTextField.text = ""
+
+    }
 }
 
 extension ViewController {
@@ -37,7 +45,7 @@ extension ViewController {
     func loadedPromises() {
         tableview.reloadData()
     }
-    
+
 }
 
 extension ViewController {
@@ -55,6 +63,23 @@ extension ViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = promiseController.promises[indexPath.row].promise
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let idInt = promiseController.promises[indexPath.row].id!
+        let id = String(describing: idInt)
+        
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            
+            promiseController.deleteData(url: "http://127.0.0.1:8000/promises/" + (id))
+            promiseController.promises.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
 }

@@ -53,7 +53,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="sendPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="JMH-d4-Aw9"/>
+                                </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nlp-v7-o0f">
                                 <rect key="frame" x="16" y="273" width="343" height="120"/>
@@ -92,6 +95,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mainTextField" destination="3XU-KG-scK" id="rRL-Iz-hd4"/>
                         <outlet property="tableview" destination="lVQ-gE-3Do" id="stN-d5-Jv3"/>
                         <outlet property="userImage" destination="UfO-Or-ykp" id="JoY-WL-8jY"/>
                         <outlet property="userName" destination="UCw-TG-DES" id="oam-4e-zrb"/>
@@ -100,34 +104,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="PYs-hx-lIX">
-            <objects>
-                <tableViewController id="MGI-9V-eVY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="7ox-Dz-cWf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Pml-ZZ-2gJ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pml-ZZ-2gJ" id="3jG-qV-inT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="MGI-9V-eVY" id="OoF-jQ-dYQ"/>
-                            <outlet property="delegate" destination="MGI-9V-eVY" id="Sfb-gN-ASF"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VMx-pH-sNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="653.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
     <resources>
