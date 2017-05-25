@@ -10,9 +10,21 @@ import Foundation
 
 class PromiseManager {
     
+    // Declare an array of Promise objects
     var promises = [Promise]()
-    var delegate: PromiseManagerDelegate? = nil
     
+    // Hard coded list, later can be pulled from list of suggestions based on 
+    // user trends, user specific data, workout ruitine specific, etc that can
+    // be user or coach specific
+    var promiseSuggestions = ["I will walk xx minutes.",
+                              "I will stand for xx minutes.",
+                              "I will read for xx minutes.",
+                              "I won't use my phone xx minutes before bed.",
+                              "I won't eat processed sugars"]
+    
+    var delegate: PromiseManagerDelegate? = nil // class delegate declaration
+    
+    // GET
     func getData(url: String) {
         
         let request = URLRequest(url: URL(string: url)!) // Convert url to URL
@@ -60,6 +72,7 @@ class PromiseManager {
         task.resume()
     }
     
+    // DELETE
     func deleteData(url: String) {
         var request = URLRequest(url: URL(string: url)!) // Convert url to URL
         request.httpMethod = "DELETE" // Set request type to DELETE
@@ -77,7 +90,7 @@ class PromiseManager {
         
     }
     
-    
+    // POST
     func postData(url: String, promise: String) {
         var request = URLRequest(url: URL(string: url)!) // Convert url to URL
         request.httpMethod = "POST" // Set request to POST

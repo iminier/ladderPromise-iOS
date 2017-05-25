@@ -8,6 +8,7 @@
 
 import UIKit
 
+// makes square image round. Used to make profile image round.
 extension UIImageView {
     
     func makeImageRound() {

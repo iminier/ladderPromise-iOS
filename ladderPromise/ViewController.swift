@@ -8,30 +8,48 @@
 
 import UIKit
 
-class ViewController: UIViewController, PromiseManagerDelegate, UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate {
+class ViewController: UIViewController, PromiseManagerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    // Decalre constants
     let promiseController = PromiseManager()
 
+    // Declare variables
     @IBOutlet weak var mainTextField: UITextField!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var uiPickerPromises: UIPickerView!
+    @IBOutlet weak var errorLabel: UILabel!
 
-    // Starts postData method and reloads tableview
+    // Start postData method and reloads tableview when the Send button is pressed from keyboard
     @IBAction func sendPressed(_ sender: UITextField) {
-        promiseController.postData(url: "http://127.0.0.1:8000/promises/", promise: mainTextField.text!)
-        promiseController.promises = []
-        mainTextField.text = ""
+        
+        // Check to see promise begins with "I will" or "I won't"
+        if (mainTextField.text?.hasPrefix("I will"))! || (mainTextField.text?.hasPrefix("I won't"))! {
+            promiseController.postData(url: "http://127.0.0.1:8000/promises/", promise: mainTextField.text!)
+            promiseController.promises = []
+            mainTextField.text = ""
+            
+            // Remove error label in event it was displayed previously
+            if errorLabel.alpha == 1 {
+                errorLabel.alpha = 0
+            }
+            
+        } else {
+             errorLabel.alpha = 1 // Display error label
+        }
 
     }
 }
 
 extension ViewController {
     
+    // Load data and view
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         userImage.makeImageRound()
+        uiPickerPromises.delegate = self
+        uiPickerPromises.dataSource = self
         promiseController.delegate = self
         promiseController.getData(url: "http://127.0.0.1:8000/promises/")
         
@@ -41,15 +59,11 @@ extension ViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func loadedPromises() {
-        tableview.reloadData()
-    }
 
 }
 
+// TableView methods
 extension ViewController {
-    // TableView Methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -82,4 +96,27 @@ extension ViewController {
         }
     }
     
+    func loadedPromises() {
+        tableview.reloadData()
+    }
+}
+
+// PickerView methods
+extension ViewController {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return promiseController.promiseSuggestions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return promiseController.promiseSuggestions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        mainTextField.text = promiseController.promiseSuggestions[row]
+    }
 }

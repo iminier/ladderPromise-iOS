@@ -10,7 +10,7 @@ import Foundation
 
 import Foundation
 
-//
+// Promise object
 
 class Promise {
     
