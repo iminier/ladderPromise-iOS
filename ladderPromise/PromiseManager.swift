@@ -109,6 +109,8 @@ class PromiseManager {
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                 print(httpStatus.statusCode)
+                // Status codes can be used to signal if something happened correctly or not.
+                // Printed status to show how acces can be gained to it
             }
             
             // Run loadedPromises method on main queue in order to reload the tableview
